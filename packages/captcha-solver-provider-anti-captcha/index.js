@@ -9,14 +9,18 @@ const request = require('request-promise-native').defaults({
 const CaptchaSolverProvider = require('captcha-solver-provider')
 
 const SUPPORTED_TASK_TYPES = new Set([
+  'image-to-text'
+
+  // TODO
+  /*
   'custom',
-  'image-to-text',
   'recaptcha',
   'recaptcha-proxyless',
   'nocaptcha',
   'nocaptcha-proxyless',
   'funcaptcha',
   'funcaptcha-proxyless'
+  */
 ])
 
 /**
@@ -111,6 +115,8 @@ class CaptchaSolverProviderAntiCaptcha extends CaptchaSolverProvider {
    * @return {Promise<object>}
    */
   async getTaskResult (taskId) {
+    ow(taskId, ow.string.nonEmpty)
+
     const result = await request({
       method: 'POST',
       uri: '/getTaskResult',

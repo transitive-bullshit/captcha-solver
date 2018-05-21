@@ -8,7 +8,9 @@ const factory = require('./providers')
 
 test('anti-captcha', (t) => {
   t.is(factory.providers['anti-captcha'], CaptchaSolverProviderAntiCaptcha)
-  t.true(factory.getProviderByName('anti-captcha') instanceof CaptchaSolverProviderAntiCaptcha)
+  t.true(factory.getProviderByName('anti-captcha', {
+    key: 'foo'
+  }) instanceof CaptchaSolverProviderAntiCaptcha)
 })
 
 /*
