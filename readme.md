@@ -59,7 +59,7 @@ This project is fully functional both as a [library](packages/captcha-solver) an
     -   [createTask](#createtask)
     -   [getTaskResult](#gettaskresult)
 
-### [CaptchaSolver](https://github.com/transitive-bullshit/captcha-solver/blob/b2f7e425355d71e570d985f6d372c302b83b37df/packages/captcha-solver/index.js#L19-L102)
+### [CaptchaSolver](https://github.com/transitive-bullshit/captcha-solver/blob/e697b8de4e44a824ca8fb8849ffd33245037a55e/packages/captcha-solver/index.js#L19-L128)
 
 Main entrypoint for solving captchas.
 
@@ -71,7 +71,7 @@ Type: `function (provider, opts)`
 
 * * *
 
-#### [provider](https://github.com/transitive-bullshit/captcha-solver/blob/b2f7e425355d71e570d985f6d372c302b83b37df/packages/captcha-solver/index.js#L33-L33)
+#### [provider](https://github.com/transitive-bullshit/captcha-solver/blob/e697b8de4e44a824ca8fb8849ffd33245037a55e/packages/captcha-solver/index.js#L33-L33)
 
 Provider powering this solver.
 
@@ -79,19 +79,46 @@ Type: CaptchaSolverProvider
 
 * * *
 
-#### [createTask](https://github.com/transitive-bullshit/captcha-solver/blob/b2f7e425355d71e570d985f6d372c302b83b37df/packages/captcha-solver/index.js#L44-L66)
+#### [createTask](https://github.com/transitive-bullshit/captcha-solver/blob/e697b8de4e44a824ca8fb8849ffd33245037a55e/packages/captcha-solver/index.js#L70-L92)
 
 Creates a new captcha solving task.
+
+Valid values for `opts.type` are:
+
+-   image-to-text
+-   recaptcha
+-   recaptcha-proxyless
+-   nocaptcha
+-   nocaptcha-proxyless
+-   funcaptcha
+-   funcaptcha-proxyless
+
+Note that not all providers support all captcha types. See
+`provider.supportedTaskTypes` for a Set containing all task types a given
+provider supports.
+
+Note that most of these options will be unused depending on the task type.
 
 Type: `function (opts)`
 
 -   `opts` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** Options
     -   `opts.type` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Type of captcha to solve
     -   `opts.image` **([buffer](https://nodejs.org/api/buffer.html) \| [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))?** Path, URL, or buffer of an image to process
+    -   `opts.websiteURL` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** Website URL for nocaptcha, recaptcha, and funcaptcha
+    -   `opts.websiteKey` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** Recaptcha website key
+    -   `opts.websiteSToken` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** Secret token for old versions of Recaptcha
+    -   `opts.websitePublicKey` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** Funcaptcha public key
+    -   `opts.proxyType` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** Proxy type (http/socks4/socks5)
+    -   `opts.proxyAddress` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** Proxy IP address (ipv4/ipv6)
+    -   `opts.proxyPort` **([string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) \| [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number))?** Proxy port
+    -   `opts.proxyLogin` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** Proxy login for basic auth
+    -   `opts.proxyPassword` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** Proxy password
+    -   `opts.userAgent` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** Browser's User-Agent to emulate
+    -   `opts.cookies` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** Additional cookies to emulate
 
 * * *
 
-#### [getTaskResult](https://github.com/transitive-bullshit/captcha-solver/blob/b2f7e425355d71e570d985f6d372c302b83b37df/packages/captcha-solver/index.js#L78-L101)
+#### [getTaskResult](https://github.com/transitive-bullshit/captcha-solver/blob/e697b8de4e44a824ca8fb8849ffd33245037a55e/packages/captcha-solver/index.js#L104-L127)
 
 Fetches the result of a previously created captcha solving task.
 
