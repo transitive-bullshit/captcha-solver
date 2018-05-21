@@ -32,7 +32,7 @@ const codes = await solver.solve()
     -   [createTask](#createtask)
     -   [getTaskResult](#gettaskresult)
 
-### CaptchaSolver
+### [CaptchaSolver](https://github.com/transitive-bullshit/captcha-solver/blob/907402a6062ab2885125bb1c20b616b78356f175/packages/captcha-solver/index.js#L16-L78)
 
 Main entrypoint for solving captchas.
 
@@ -44,7 +44,7 @@ Type: `function (provider, opts)`
 
 * * *
 
-#### provider
+#### [provider](https://github.com/transitive-bullshit/captcha-solver/blob/907402a6062ab2885125bb1c20b616b78356f175/packages/captcha-solver/index.js#L30-L30)
 
 Provider powering this solver.
 
@@ -52,7 +52,7 @@ Type: CaptchaSolverProvider
 
 * * *
 
-#### createTask
+#### [createTask](https://github.com/transitive-bullshit/captcha-solver/blob/907402a6062ab2885125bb1c20b616b78356f175/packages/captcha-solver/index.js#L41-L50)
 
 Creates a new captcha solving task.
 
@@ -64,9 +64,9 @@ Type: `function (opts)`
 
 * * *
 
-#### getTaskResult
+#### [getTaskResult](https://github.com/transitive-bullshit/captcha-solver/blob/907402a6062ab2885125bb1c20b616b78356f175/packages/captcha-solver/index.js#L60-L77)
 
-Fetches the result of a previously created Captcha solving task.
+Fetches the result of a previously created captcha solving task.
 
 Type: `function (taskId, opts)`
 

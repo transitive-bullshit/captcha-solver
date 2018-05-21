@@ -20,10 +20,11 @@ npm install --save captcha-solver-provider
 
 -   [CaptchaSolverProvider](#captchasolverprovider)
     -   [name](#name)
+    -   [supportedTaskTypes](#supportedtasktypes)
     -   [createTask](#createtask)
     -   [getTaskResult](#gettaskresult)
 
-### CaptchaSolverProvider
+### [CaptchaSolverProvider](https://github.com/transitive-bullshit/captcha-solver/blob/907402a6062ab2885125bb1c20b616b78356f175/packages/captcha-solver-provider/index.js#L6-L47)
 
 Abstract base class for captcha solver providers.
 
@@ -31,7 +32,7 @@ Type: `function ()`
 
 * * *
 
-#### name
+#### [name](https://github.com/transitive-bullshit/captcha-solver/blob/907402a6062ab2885125bb1c20b616b78356f175/packages/captcha-solver-provider/index.js#L12-L14)
 
 Provider name.
 
@@ -39,7 +40,15 @@ Type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Globa
 
 * * *
 
-#### createTask
+#### [supportedTaskTypes](https://github.com/transitive-bullshit/captcha-solver/blob/907402a6062ab2885125bb1c20b616b78356f175/packages/captcha-solver-provider/index.js#L21-L23)
+
+Set containing task types supported by this provider.
+
+Type: [Set](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Set)&lt;[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>
+
+* * *
+
+#### [createTask](https://github.com/transitive-bullshit/captcha-solver/blob/907402a6062ab2885125bb1c20b616b78356f175/packages/captcha-solver-provider/index.js#L34-L36)
 
 Creates a new captcha solving task.
 
@@ -51,9 +60,9 @@ Type: `function (opts)`
 
 * * *
 
-#### getTaskResult
+#### [getTaskResult](https://github.com/transitive-bullshit/captcha-solver/blob/907402a6062ab2885125bb1c20b616b78356f175/packages/captcha-solver-provider/index.js#L44-L46)
 
-Fetches the result of a previously created Captcha solving task.
+Fetches the result of a previously created captcha solving task.
 
 Type: `function (taskId, opts)`
 

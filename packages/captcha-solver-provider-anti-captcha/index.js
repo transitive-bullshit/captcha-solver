@@ -44,6 +44,11 @@ class CaptchaSolverProviderAntiCaptcha extends CaptchaSolverProvider {
     return 'anti-captcha'
   }
 
+  /**
+   * Set containing task types supported by this provider.
+   *
+   * @member {Set<string>}
+   */
   get supportedTaskTypes () {
     return SUPPORTED_TASK_TYPES
   }
