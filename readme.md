@@ -1,6 +1,6 @@
 # captcha-solver
 
-> Library for automating captcha verification.
+> Library and CLI for automating captcha verification across multiple providers.
 
 [![NPM](https://img.shields.io/npm/v/captcha-solver.svg)](https://www.npmjs.com/package/captcha-solver) [![Build Status](https://travis-ci.com/transitive-bullshit/captcha-solver.svg?branch=master)](https://travis-ci.com/transitive-bullshit/captcha-solver) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 

@@ -1,6 +1,6 @@
 {
   "private": true,
-  "description": "Facilitates the automation of CAPTCHA verification.",
+  "description": "Library and CLI for automating captcha verification across multiple providers.",
   "repository": "transitive-bullshit/captcha-solver",
   "author": "Travis Fischer <travis@automagical.ai>",
   "license": "MIT",
