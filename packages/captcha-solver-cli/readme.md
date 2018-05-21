@@ -12,7 +12,24 @@ npm install -g captcha-solver-cli
 
 ## Usage
 
-TODO
+```bash
+  Usage: index [options] [command]
+
+  Options:
+
+    -V, --version                       output the version number
+    -i, --image <path>                  path or url of image to solve
+    -t, --type <string>                 type of captcha to solve (default: image-to-text)
+    -k, --key <string>                  api key for provider
+    -P, --provider <provider>           provider to use for solving (default: anti-captcha)
+    -h, --help                          output usage information
+
+  Commands:
+
+    create-task
+    get-task-result [options] <taskId>
+    solve [options]
+```
 
 ## Related
 
