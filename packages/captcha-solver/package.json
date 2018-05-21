@@ -1,6 +1,6 @@
 {
   "name": "captcha-solver",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Library for automating captcha verification.",
   "main": "index.js",
   "repository": "transitive-bullshit/captcha-solver",
@@ -37,8 +37,8 @@
     "update-markdown-jsdoc": "^1.0.2"
   },
   "dependencies": {
-    "captcha-solver-provider": "^0.0.1",
-    "captcha-solver-provider-anti-captcha": "^0.0.2",
+    "captcha-solver-provider": "^0.0.2",
+    "captcha-solver-provider-anti-captcha": "^0.0.3",
     "is-url-superb": "^2.0.0",
     "node-base64-image": "^1.0.5",
     "p-retry": "^2.0.0",
