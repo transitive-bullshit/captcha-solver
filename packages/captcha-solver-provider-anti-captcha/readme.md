@@ -28,7 +28,7 @@ npm install --save captcha-solver-provider-anti-captcha
     -   [createTask](#createtask)
     -   [getTaskResult](#gettaskresult)
 
-### [CaptchaSolverProviderAntiCaptcha](https://github.com/transitive-bullshit/captcha-solver/blob/4a5655ffaed40662d6b3a73a61e0c81856146464/packages/captcha-solver-provider-anti-captcha/index.js#L28-L172)
+### [CaptchaSolverProviderAntiCaptcha](https://github.com/transitive-bullshit/captcha-solver/blob/b8dc00eb73300cf01bce668a68a784f6f0e72b4e/packages/captcha-solver-provider-anti-captcha/index.js#L28-L183)
 
 **Extends: CaptchaSolverProvider**
 
@@ -41,7 +41,7 @@ Type: `function (opts)`
 
 * * *
 
-#### [name](https://github.com/transitive-bullshit/captcha-solver/blob/4a5655ffaed40662d6b3a73a61e0c81856146464/packages/captcha-solver-provider-anti-captcha/index.js#L43-L45)
+#### [name](https://github.com/transitive-bullshit/captcha-solver/blob/b8dc00eb73300cf01bce668a68a784f6f0e72b4e/packages/captcha-solver-provider-anti-captcha/index.js#L43-L45)
 
 Provider name.
 
@@ -49,7 +49,7 @@ Type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Globa
 
 * * *
 
-#### [supportedTaskTypes](https://github.com/transitive-bullshit/captcha-solver/blob/4a5655ffaed40662d6b3a73a61e0c81856146464/packages/captcha-solver-provider-anti-captcha/index.js#L52-L54)
+#### [supportedTaskTypes](https://github.com/transitive-bullshit/captcha-solver/blob/b8dc00eb73300cf01bce668a68a784f6f0e72b4e/packages/captcha-solver-provider-anti-captcha/index.js#L52-L54)
 
 Set containing task types supported by this provider.
 
@@ -57,7 +57,7 @@ Type: [Set](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_O
 
 * * *
 
-#### [createTask](https://github.com/transitive-bullshit/captcha-solver/blob/4a5655ffaed40662d6b3a73a61e0c81856146464/packages/captcha-solver-provider-anti-captcha/index.js#L65-L143)
+#### [createTask](https://github.com/transitive-bullshit/captcha-solver/blob/b8dc00eb73300cf01bce668a68a784f6f0e72b4e/packages/captcha-solver-provider-anti-captcha/index.js#L76-L154)
 
 Creates a new captcha solving task.
 
@@ -66,10 +66,21 @@ Type: `function (opts)`
 -   `opts` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** Options
     -   `opts.type` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Type of captcha to solve
     -   `opts.image` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** Captcha image to process encoded as a base64 string
+    -   `opts.websiteURL` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** Website URL for nocaptcha, recaptcha, and funcaptcha
+    -   `opts.websiteKey` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** Recaptcha website key
+    -   `opts.websiteSToken` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** Secret token for old versions of Recaptcha
+    -   `opts.websitePublicKey` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** Funcaptcha public key
+    -   `opts.proxyType` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** Proxy type (http/socks4/socks5)
+    -   `opts.proxyAddress` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** Proxy IP address (ipv4/ipv6)
+    -   `opts.proxyPort` **([string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) \| [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number))?** Proxy port
+    -   `opts.proxyLogin` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** Proxy login for basic auth
+    -   `opts.proxyPassword` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** Proxy password
+    -   `opts.userAgent` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** Browser's User-Agent to emulate
+    -   `opts.cookies` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** Additional cookies to emulate
 
 * * *
 
-#### [getTaskResult](https://github.com/transitive-bullshit/captcha-solver/blob/4a5655ffaed40662d6b3a73a61e0c81856146464/packages/captcha-solver-provider-anti-captcha/index.js#L152-L171)
+#### [getTaskResult](https://github.com/transitive-bullshit/captcha-solver/blob/b8dc00eb73300cf01bce668a68a784f6f0e72b4e/packages/captcha-solver-provider-anti-captcha/index.js#L163-L182)
 
 Fetches the result of a previously created captcha solving task.
 

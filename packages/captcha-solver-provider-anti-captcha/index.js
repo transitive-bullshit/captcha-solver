@@ -59,6 +59,17 @@ class CaptchaSolverProviderAntiCaptcha extends CaptchaSolverProvider {
    * @param {object} opts - Options
    * @param {string} opts.type - Type of captcha to solve
    * @param {string} [opts.image] - Captcha image to process encoded as a base64 string
+   * @param {string} [opts.websiteURL] - Website URL for nocaptcha, recaptcha, and funcaptcha
+   * @param {string} [opts.websiteKey] - Recaptcha website key
+   * @param {string} [opts.websiteSToken] - Secret token for old versions of Recaptcha
+   * @param {string} [opts.websitePublicKey] - Funcaptcha public key
+   * @param {string} [opts.proxyType] - Proxy type (http/socks4/socks5)
+   * @param {string} [opts.proxyAddress] - Proxy IP address (ipv4/ipv6)
+   * @param {string|number} [opts.proxyPort] - Proxy port
+   * @param {string} [opts.proxyLogin] - Proxy login for basic auth
+   * @param {string} [opts.proxyPassword] - Proxy password
+   * @param {string} [opts.userAgent] - Browser's User-Agent to emulate
+   * @param {string} [opts.cookies] - Additional cookies to emulate
    *
    * @return {Promise<string>} Unique task identifier
    */
