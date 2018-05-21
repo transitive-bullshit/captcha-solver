@@ -2,7 +2,7 @@
 
 > Abstract base class for captcha solver providers.
 
-[![NPM](https://img.shields.io/npm/v/captcha-solver-provider.svg)](https://www.npmjs.com/package/captcha-solver-provider) [![Build Status](https://travis-ci.org/transitive-bullshit/captcha-solver.svg?branch=master)](https://travis-ci.org/transitive-bullshit/captcha-solver) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/captcha-solver-provider.svg)](https://www.npmjs.com/package/captcha-solver-provider) [![Build Status](https://travis-ci.com/transitive-bullshit/captcha-solver.svg?branch=master)](https://travis-ci.com/transitive-bullshit/captcha-solver) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 

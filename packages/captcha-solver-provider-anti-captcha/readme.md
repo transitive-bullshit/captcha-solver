@@ -2,7 +2,7 @@
 
 > Captcha solver provider for the [anti-captcha](https://anti-captcha.com) service.
 
-[![NPM](https://img.shields.io/npm/v/captcha-solver-provider-anti-captcha.svg)](https://www.npmjs.com/package/captcha-solver-provider-anti-captcha) [![Build Status](https://travis-ci.org/transitive-bullshit/captcha-solver.svg?branch=master)](https://travis-ci.org/transitive-bullshit/captcha-solver) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/captcha-solver-provider-anti-captcha.svg)](https://www.npmjs.com/package/captcha-solver-provider-anti-captcha) [![Build Status](https://travis-ci.com/transitive-bullshit/captcha-solver.svg?branch=master)](https://travis-ci.com/transitive-bullshit/captcha-solver) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 <p align="center">
   <a href="https://anti-captcha.com"><img src="https://anti-captcha.com/images/mainpage/herofront_nocape.png" alt="Anticaptcha Logo"></a>
