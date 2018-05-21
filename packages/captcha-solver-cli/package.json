@@ -1,6 +1,6 @@
 {
   "name": "captcha-solver-cli",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "CLI for automating CAPTCHA verification.",
   "main": "index.js",
   "repository": "transitive-bullshit/captcha-solver",
@@ -40,7 +40,7 @@
     "update-markdown-usage": "^1.0.1"
   },
   "dependencies": {
-    "captcha-solver": "^0.0.3",
+    "captcha-solver": "^0.0.4",
     "commander": "^2.15.1",
     "delay": "^2.0.0",
     "node-compat-require": "^1.0.3"
