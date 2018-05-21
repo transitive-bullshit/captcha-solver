@@ -24,7 +24,7 @@ npm install --save captcha-solver-provider
     -   [createTask](#createtask)
     -   [getTaskResult](#gettaskresult)
 
-### [CaptchaSolverProvider](https://github.com/transitive-bullshit/captcha-solver/blob/907402a6062ab2885125bb1c20b616b78356f175/packages/captcha-solver-provider/index.js#L6-L47)
+### [CaptchaSolverProvider](https://github.com/transitive-bullshit/captcha-solver/blob/39ef9248d3b4c7295b9019438ab810dfcb5ea2e7/packages/captcha-solver-provider/index.js#L6-L49)
 
 Abstract base class for captcha solver providers.
 
@@ -32,7 +32,7 @@ Type: `function ()`
 
 * * *
 
-#### [name](https://github.com/transitive-bullshit/captcha-solver/blob/907402a6062ab2885125bb1c20b616b78356f175/packages/captcha-solver-provider/index.js#L12-L14)
+#### [name](https://github.com/transitive-bullshit/captcha-solver/blob/39ef9248d3b4c7295b9019438ab810dfcb5ea2e7/packages/captcha-solver-provider/index.js#L12-L14)
 
 Provider name.
 
@@ -40,7 +40,7 @@ Type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Globa
 
 * * *
 
-#### [supportedTaskTypes](https://github.com/transitive-bullshit/captcha-solver/blob/907402a6062ab2885125bb1c20b616b78356f175/packages/captcha-solver-provider/index.js#L21-L23)
+#### [supportedTaskTypes](https://github.com/transitive-bullshit/captcha-solver/blob/39ef9248d3b4c7295b9019438ab810dfcb5ea2e7/packages/captcha-solver-provider/index.js#L21-L23)
 
 Set containing task types supported by this provider.
 
@@ -48,7 +48,7 @@ Type: [Set](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_O
 
 * * *
 
-#### [createTask](https://github.com/transitive-bullshit/captcha-solver/blob/907402a6062ab2885125bb1c20b616b78356f175/packages/captcha-solver-provider/index.js#L34-L36)
+#### [createTask](https://github.com/transitive-bullshit/captcha-solver/blob/39ef9248d3b4c7295b9019438ab810dfcb5ea2e7/packages/captcha-solver-provider/index.js#L34-L36)
 
 Creates a new captcha solving task.
 
@@ -60,7 +60,7 @@ Type: `function (opts)`
 
 * * *
 
-#### [getTaskResult](https://github.com/transitive-bullshit/captcha-solver/blob/907402a6062ab2885125bb1c20b616b78356f175/packages/captcha-solver-provider/index.js#L44-L46)
+#### [getTaskResult](https://github.com/transitive-bullshit/captcha-solver/blob/39ef9248d3b4c7295b9019438ab810dfcb5ea2e7/packages/captcha-solver-provider/index.js#L46-L48)
 
 Fetches the result of a previously created captcha solving task.
 

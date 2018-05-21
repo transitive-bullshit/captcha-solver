@@ -107,6 +107,8 @@ class CaptchaSolverProviderAntiCaptcha extends CaptchaSolverProvider {
    * Fetches the result of a previously created captcha solving task.
    *
    * @param {string} taskId - Unique task identifier
+   *
+   * @return {Promise<object>}
    */
   async getTaskResult (taskId) {
     const result = await request({

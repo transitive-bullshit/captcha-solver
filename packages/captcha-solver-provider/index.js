@@ -40,6 +40,8 @@ class CaptchaSolverProvider {
    *
    * @param {string} taskId - Unique task identifier
    * @param {object} [opts] - Options
+   *
+   * @return {Promise<object>}
    */
   async getTaskResult (taskId, opts) {
     throw new Error('provider must override "getTaskResult"')

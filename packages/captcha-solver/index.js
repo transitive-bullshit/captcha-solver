@@ -56,6 +56,8 @@ class CaptchaSolver {
    * @param {object} [opts] - Options
    * @param {number} [opts.retries=3] - Number of retries to perform
    * @param {number} [opts.timeout=30000] - Max timeout to wait in ms before aborting
+   *
+   * @return {Promise<object>}
    */
   async getTaskResult (taskId, opts = { }) {
     ow(taskId, ow.string.nonEmpty)
