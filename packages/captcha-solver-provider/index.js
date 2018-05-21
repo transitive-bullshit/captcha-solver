@@ -29,7 +29,7 @@ class CaptchaSolverProvider {
    * @param {string} opts.type - Type of captcha to solve
    * @param {string} opts.image - Captcha image to process
    *
-   * @returns {Promise<string>} Unique task identifier
+   * @return {Promise<string>} Unique task identifier
    */
   async createTask (opts) {
     throw new Error('provider must override "createTask"')
@@ -41,7 +41,7 @@ class CaptchaSolverProvider {
    * @param {string} taskId - Unique task identifier
    * @param {object} [opts] - Options
    *
-   * @returns {Promise<object>}
+   * @return {Promise<object>}
    */
   async getTaskResult (taskId, opts) {
     throw new Error('provider must override "getTaskResult"')
