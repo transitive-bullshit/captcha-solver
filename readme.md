@@ -110,6 +110,8 @@ Type: `function (taskId, opts)`
 -   [puppeteer-email](https://github.com/transitive-bullshit/puppeteer-email) - Email automation driven by headless chrome.
 -   [sms-number-verifier](https://github.com/transitive-bullshit/sms-number-verifier) - Allows you to spoof SMS number verification.
 -   [awesome-puppeteer](https://github.com/transitive-bullshit/awesome-puppeteer) - A curated list of awesome puppeteer resources.
+-   [python captcha solver](https://github.com/lorien/captcha_solver) - Similar to this module but in python.
+-   [recognize](https://github.com/kdinisv/Recognize) - Deprecated module with similar functionality to this module.
 
 ## Disclaimer
 
