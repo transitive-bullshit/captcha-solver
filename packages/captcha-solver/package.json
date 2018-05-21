@@ -1,7 +1,7 @@
 {
   "name": "captcha-solver",
   "version": "0.0.1",
-  "description": "Facilitates the automation of CAPTCHA verification.",
+  "description": "Library for automating captcha verification.",
   "main": "index.js",
   "repository": "transitive-bullshit/captcha-solver",
   "author": "Travis Fischer <travis@automagical.ai>",

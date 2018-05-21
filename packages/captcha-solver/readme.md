@@ -1,8 +1,10 @@
 # captcha-solver
 
-> Facilitates the automation of CAPTCHA verification.
+> Library for automating captcha verification.
 
 [![NPM](https://img.shields.io/npm/v/captcha-solver.svg)](https://www.npmjs.com/package/captcha-solver) [![Build Status](https://travis-ci.org/transitive-bullshit/captcha-solver.svg?branch=master)](https://travis-ci.org/transitive-bullshit/captcha-solver) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
+This module also has a [CLI](https://github.com/transitive-bullshit/captcha-solver/tree/master/packages/captcha-solver-cli).
 
 ## Install
 
@@ -32,7 +34,7 @@ const codes = await solver.solve()
     -   [createTask](#createtask)
     -   [getTaskResult](#gettaskresult)
 
-### [CaptchaSolver](https://github.com/transitive-bullshit/captcha-solver/blob/39ef9248d3b4c7295b9019438ab810dfcb5ea2e7/packages/captcha-solver/index.js#L16-L80)
+### [CaptchaSolver](https://github.com/transitive-bullshit/captcha-solver/blob/1624e9e4392264cb83f05fb4e391f33be2e01c2e/packages/captcha-solver/index.js#L19-L100)
 
 Main entrypoint for solving captchas.
 
@@ -44,7 +46,7 @@ Type: `function (provider, opts)`
 
 * * *
 
-#### [provider](https://github.com/transitive-bullshit/captcha-solver/blob/39ef9248d3b4c7295b9019438ab810dfcb5ea2e7/packages/captcha-solver/index.js#L30-L30)
+#### [provider](https://github.com/transitive-bullshit/captcha-solver/blob/1624e9e4392264cb83f05fb4e391f33be2e01c2e/packages/captcha-solver/index.js#L33-L33)
 
 Provider powering this solver.
 
@@ -52,7 +54,7 @@ Type: CaptchaSolverProvider
 
 * * *
 
-#### [createTask](https://github.com/transitive-bullshit/captcha-solver/blob/39ef9248d3b4c7295b9019438ab810dfcb5ea2e7/packages/captcha-solver/index.js#L41-L50)
+#### [createTask](https://github.com/transitive-bullshit/captcha-solver/blob/1624e9e4392264cb83f05fb4e391f33be2e01c2e/packages/captcha-solver/index.js#L44-L64)
 
 Creates a new captcha solving task.
 
@@ -60,11 +62,11 @@ Type: `function (opts)`
 
 -   `opts` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** Options
     -   `opts.type` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Type of captcha to solve
-    -   `opts.image` **([buffer](https://nodejs.org/api/buffer.html) \| [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))** Captcha image to process
+    -   `opts.image` **([buffer](https://nodejs.org/api/buffer.html) \| [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))** Path, URL, or buffer of an image to process
 
 * * *
 
-#### [getTaskResult](https://github.com/transitive-bullshit/captcha-solver/blob/39ef9248d3b4c7295b9019438ab810dfcb5ea2e7/packages/captcha-solver/index.js#L62-L79)
+#### [getTaskResult](https://github.com/transitive-bullshit/captcha-solver/blob/1624e9e4392264cb83f05fb4e391f33be2e01c2e/packages/captcha-solver/index.js#L76-L99)
 
 Fetches the result of a previously created captcha solving task.
 
@@ -79,6 +81,7 @@ Type: `function (taskId, opts)`
 
 ## Related
 
+-   [captcha-solver-cli](https://github.com/transitive-bullshit/captcha-solver/tree/master/packages/captcha-solver-cli) - CLI for this module.
 -   [puppeteer-email](https://github.com/transitive-bullshit/puppeteer-email) - Email automation driven by headless chrome.
 -   [sms-number-verifier](https://github.com/transitive-bullshit/sms-number-verifier) - Allows you to spoof SMS number verification.
 -   [awesome-puppeteer](https://github.com/transitive-bullshit/awesome-puppeteer) - A curated list of awesome puppeteer resources.

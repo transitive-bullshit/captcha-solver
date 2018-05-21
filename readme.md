@@ -1,6 +1,6 @@
 # captcha-solver
 
-> Facilitates the automation of CAPTCHA verification.
+> Library for automating captcha verification.
 
 [![NPM](https://img.shields.io/npm/v/captcha-solver.svg)](https://www.npmjs.com/package/captcha-solver) [![Build Status](https://travis-ci.com/transitive-bullshit/captcha-solver.svg?branch=master)](https://travis-ci.com/transitive-bullshit/captcha-solver) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
@@ -12,7 +12,8 @@ This project is an early WIP.
 
 ## Packages
 
-- [captcha-solver](packages/captcha-solver) - Main library entrypoint.
+- [captcha-solver](packages/captcha-solver) - Library for automating captcha verification.
+- [captcha-solver-cli](packages/captcha-solver) - CLI for automating captcha verification.
 - [captcha-solver-provider](packages/captcha-solver-provider) - Abstract base class for captcha solver providers.
   - [captcha-solver-provider-anti-captcha](packages/captcha-solver-provider-anti-captcha) - Captcha solver provider for the [anti-captcha](https://anti-captcha.com) service.
   - [captcha-solver-provider-browser](packages/captcha-solver-provider-browser) - Captcha solver provider for a local, browser-based, manual solver.
