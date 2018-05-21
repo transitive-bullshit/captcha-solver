@@ -28,7 +28,7 @@ npm install --save captcha-solver-provider-anti-captcha
     -   [createTask](#createtask)
     -   [getTaskResult](#gettaskresult)
 
-### [CaptchaSolverProviderAntiCaptcha](https://github.com/transitive-bullshit/captcha-solver/blob/d779c7a87541decd9422a715c3e7e503a49fd0bb/packages/captcha-solver-provider-anti-captcha/index.js#L32-L137)
+### [CaptchaSolverProviderAntiCaptcha](https://github.com/transitive-bullshit/captcha-solver/blob/4a5655ffaed40662d6b3a73a61e0c81856146464/packages/captcha-solver-provider-anti-captcha/index.js#L28-L172)
 
 **Extends: CaptchaSolverProvider**
 
@@ -41,7 +41,7 @@ Type: `function (opts)`
 
 * * *
 
-#### [name](https://github.com/transitive-bullshit/captcha-solver/blob/d779c7a87541decd9422a715c3e7e503a49fd0bb/packages/captcha-solver-provider-anti-captcha/index.js#L47-L49)
+#### [name](https://github.com/transitive-bullshit/captcha-solver/blob/4a5655ffaed40662d6b3a73a61e0c81856146464/packages/captcha-solver-provider-anti-captcha/index.js#L43-L45)
 
 Provider name.
 
@@ -49,7 +49,7 @@ Type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Globa
 
 * * *
 
-#### [supportedTaskTypes](https://github.com/transitive-bullshit/captcha-solver/blob/d779c7a87541decd9422a715c3e7e503a49fd0bb/packages/captcha-solver-provider-anti-captcha/index.js#L56-L58)
+#### [supportedTaskTypes](https://github.com/transitive-bullshit/captcha-solver/blob/4a5655ffaed40662d6b3a73a61e0c81856146464/packages/captcha-solver-provider-anti-captcha/index.js#L52-L54)
 
 Set containing task types supported by this provider.
 
@@ -57,7 +57,7 @@ Type: [Set](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_O
 
 * * *
 
-#### [createTask](https://github.com/transitive-bullshit/captcha-solver/blob/d779c7a87541decd9422a715c3e7e503a49fd0bb/packages/captcha-solver-provider-anti-captcha/index.js#L69-L108)
+#### [createTask](https://github.com/transitive-bullshit/captcha-solver/blob/4a5655ffaed40662d6b3a73a61e0c81856146464/packages/captcha-solver-provider-anti-captcha/index.js#L65-L143)
 
 Creates a new captcha solving task.
 
@@ -65,11 +65,11 @@ Type: `function (opts)`
 
 -   `opts` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** Options
     -   `opts.type` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Type of captcha to solve
-    -   `opts.image` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Captcha image to process
+    -   `opts.image` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** Captcha image to process encoded as a base64 string
 
 * * *
 
-#### [getTaskResult](https://github.com/transitive-bullshit/captcha-solver/blob/d779c7a87541decd9422a715c3e7e503a49fd0bb/packages/captcha-solver-provider-anti-captcha/index.js#L117-L136)
+#### [getTaskResult](https://github.com/transitive-bullshit/captcha-solver/blob/4a5655ffaed40662d6b3a73a61e0c81856146464/packages/captcha-solver-provider-anti-captcha/index.js#L152-L171)
 
 Fetches the result of a previously created captcha solving task.
 
@@ -82,6 +82,7 @@ Type: `function (taskId)`
 ## Related
 
 -   [captcha-solver](https://github.com/transitive-bullshit/captcha-solver) - Facilitates the automation of CAPTCHA verification.
+-   [anti-captcha API docs](https://anticaptcha.atlassian.net/wiki/spaces/API/overview) - Anticaptcha v2 API docs.
 
 ## Disclaimer
 

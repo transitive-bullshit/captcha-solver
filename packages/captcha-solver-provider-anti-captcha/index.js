@@ -9,18 +9,14 @@ const request = require('request-promise-native').defaults({
 const CaptchaSolverProvider = require('captcha-solver-provider')
 
 const SUPPORTED_TASK_TYPES = new Set([
-  'image-to-text'
-
-  // TODO
-  /*
-  'custom',
+  'image-to-text',
   'recaptcha',
   'recaptcha-proxyless',
   'nocaptcha',
   'nocaptcha-proxyless',
   'funcaptcha',
   'funcaptcha-proxyless'
-  */
+  // TODO: support custom tasks
 ])
 
 /**
@@ -62,7 +58,7 @@ class CaptchaSolverProviderAntiCaptcha extends CaptchaSolverProvider {
    *
    * @param {object} opts - Options
    * @param {string} opts.type - Type of captcha to solve
-   * @param {string} opts.image - Captcha image to process
+   * @param {string} [opts.image] - Captcha image to process encoded as a base64 string
    *
    * @return {Promise<string>} Unique task identifier
    */
@@ -81,11 +77,50 @@ class CaptchaSolverProviderAntiCaptcha extends CaptchaSolverProvider {
       task: rest
     }
 
+    // we only validate required parameters
+    // any optional parameters will be passed through untouched
     switch (opts.type) {
       case 'image-to-text':
         ow(opts.image, ow.string.nonEmpty)
         body.task.type = 'ImageToTextTask'
         body.task.body = opts.image
+        break
+
+      case 'nocaptcha':
+      case 'recaptcha':
+        ow(opts.websiteURL, ow.string.nonEmpty)
+        ow(opts.websiteKey, ow.string.nonEmpty)
+        ow(opts.proxyType, ow.string.nonEmpty)
+        ow(opts.proxyAddress, ow.string.nonEmpty)
+        ow(opts.proxyPort, ow.number.positive)
+        ow(opts.userAgent, ow.string.nonEmpty)
+
+        body.task.type = 'NoCaptchaTask'
+        break
+
+      case 'nocaptcha-proxyless':
+      case 'recaptcha-proxyless':
+        ow(opts.websiteURL, ow.string.nonEmpty)
+        ow(opts.websiteKey, ow.string.nonEmpty)
+        body.task.type = 'NoCaptchaTaskProxyless'
+        break
+
+      case 'funcaptcha':
+        ow(opts.websiteURL, ow.string.nonEmpty)
+        ow(opts.websitePublicKey, ow.string.nonEmpty)
+        ow(opts.proxyType, ow.string.nonEmpty)
+        ow(opts.proxyAddress, ow.string.nonEmpty)
+        ow(opts.proxyPort, ow.number.positive)
+        ow(opts.userAgent, ow.string.nonEmpty)
+
+        body.task.type = 'FunCaptchaTask'
+        break
+
+      case 'funcaptcha-proxyless':
+        ow(opts.websiteURL, ow.string.nonEmpty)
+        ow(opts.websitePublicKey, ow.string.nonEmpty)
+
+        body.task.type = 'FunCaptchaTaskProxyless'
         break
 
       default:

@@ -11,10 +11,21 @@ const { version } = require('../package')
 module.exports = (argv) => {
   program
     .version(version)
-    .option('-i, --image <path>', 'path or url of image to solve')
-    .option('-t, --type <string>', 'type of captcha to solve', /^(image-to-text)$/, 'image-to-text')
-    .option('-k, --key <string>', 'api key for provider')
-    .option('-P, --provider <provider>', 'provider to use for solving', /^(anti-captcha)$/, 'anti-captcha')
+    .option('-i, --image <path>', 'Path or url of image to solve')
+    .option('-t, --type <string>', 'Type of captcha to solve', (s) => s, 'image-to-text')
+    .option('-k, --key <string>', 'API key for provider')
+    .option('-u, --website-url <url>', 'Website URL for nocaptcha, recaptcha, and funcaptcha')
+    .option('---website-key <url>', 'Recaptcha website key')
+    .option('---website-s-token <token>', 'Optional secret token for old version of Recaptcha')
+    .option('---website-public-key <string>', 'Funcaptcha public key')
+    .option('--proxy-type <string>', 'Type of proxy to use', /^(http|socks4|socks5)$/)
+    .option('--proxy-address <string>', 'Proxy IP address ipv4/ipv6')
+    .option('--proxy-port <number>', 'Proxy port')
+    .option('--proxy-login <string>', 'Optional login for proxy which requires authorizaiton (basic)')
+    .option('--proxy-password <string>', 'Optional proxy password')
+    .option('--user-agent <string>', 'Browser\'s User-Agent which is used in emulation.')
+    .option('--cookies <string>', 'Optional additional cookies.')
+    .option('-P, --provider <provider>', 'Provider to use', /^(anti-captcha)$/, 'anti-captcha')
 
   program
     .command('create-task')
@@ -22,12 +33,23 @@ module.exports = (argv) => {
       try {
         const client = new CaptchaSolver(program.provider, { key: program.key })
 
-        const result = await client.createTask({
+        const taskId = await client.createTask({
           type: program.type,
-          image: program.image
+          image: program.image,
+          websiteURL: program.websiteUrl,
+          websiteKey: program.websiteKey,
+          websiteSToken: program.websiteSToken,
+          websitePublicKey: program.websitePublicKey,
+          proxyType: program.proxyType,
+          proxyAddress: program.proxyAddress,
+          proxyPort: program.proxyPort,
+          proxyLogin: program.proxyLogin,
+          proxyPassword: program.proxyPassword,
+          userAgent: program.userAgent,
+          cookies: program.cookies
         })
 
-        console.log(result)
+        console.log(taskId)
       } catch (err) {
         console.error(err)
         process.exit(1)
@@ -68,7 +90,18 @@ module.exports = (argv) => {
 
         const taskId = await client.createTask({
           type: program.type,
-          image: program.image
+          image: program.image,
+          websiteURL: program.websiteUrl,
+          websiteKey: program.websiteKey,
+          websiteSToken: program.websiteSToken,
+          websitePublicKey: program.websitePublicKey,
+          proxyType: program.proxyType,
+          proxyAddress: program.proxyAddress,
+          proxyPort: program.proxyPort,
+          proxyLogin: program.proxyLogin,
+          proxyPassword: program.proxyPassword,
+          userAgent: program.userAgent,
+          cookies: program.cookies
         })
 
         console.log(`task id: ${taskId}`)

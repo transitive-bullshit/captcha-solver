@@ -34,7 +34,7 @@ const codes = await solver.solve()
     -   [createTask](#createtask)
     -   [getTaskResult](#gettaskresult)
 
-### [CaptchaSolver](https://github.com/transitive-bullshit/captcha-solver/blob/d779c7a87541decd9422a715c3e7e503a49fd0bb/packages/captcha-solver/index.js#L19-L100)
+### [CaptchaSolver](https://github.com/transitive-bullshit/captcha-solver/blob/4a5655ffaed40662d6b3a73a61e0c81856146464/packages/captcha-solver/index.js#L19-L102)
 
 Main entrypoint for solving captchas.
 
@@ -46,7 +46,7 @@ Type: `function (provider, opts)`
 
 * * *
 
-#### [provider](https://github.com/transitive-bullshit/captcha-solver/blob/d779c7a87541decd9422a715c3e7e503a49fd0bb/packages/captcha-solver/index.js#L33-L33)
+#### [provider](https://github.com/transitive-bullshit/captcha-solver/blob/4a5655ffaed40662d6b3a73a61e0c81856146464/packages/captcha-solver/index.js#L33-L33)
 
 Provider powering this solver.
 
@@ -54,7 +54,7 @@ Type: CaptchaSolverProvider
 
 * * *
 
-#### [createTask](https://github.com/transitive-bullshit/captcha-solver/blob/d779c7a87541decd9422a715c3e7e503a49fd0bb/packages/captcha-solver/index.js#L44-L64)
+#### [createTask](https://github.com/transitive-bullshit/captcha-solver/blob/4a5655ffaed40662d6b3a73a61e0c81856146464/packages/captcha-solver/index.js#L44-L66)
 
 Creates a new captcha solving task.
 
@@ -62,11 +62,11 @@ Type: `function (opts)`
 
 -   `opts` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** Options
     -   `opts.type` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Type of captcha to solve
-    -   `opts.image` **([buffer](https://nodejs.org/api/buffer.html) \| [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))** Path, URL, or buffer of an image to process
+    -   `opts.image` **([buffer](https://nodejs.org/api/buffer.html) \| [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String))?** Path, URL, or buffer of an image to process
 
 * * *
 
-#### [getTaskResult](https://github.com/transitive-bullshit/captcha-solver/blob/d779c7a87541decd9422a715c3e7e503a49fd0bb/packages/captcha-solver/index.js#L76-L99)
+#### [getTaskResult](https://github.com/transitive-bullshit/captcha-solver/blob/4a5655ffaed40662d6b3a73a61e0c81856146464/packages/captcha-solver/index.js#L78-L101)
 
 Fetches the result of a previously created captcha solving task.
 

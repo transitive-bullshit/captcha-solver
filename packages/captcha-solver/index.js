@@ -37,7 +37,7 @@ class CaptchaSolver {
    *
    * @param {object} opts - Options
    * @param {string} opts.type - Type of captcha to solve
-   * @param {buffer|string} opts.image - Path, URL, or buffer of an image to process
+   * @param {buffer|string} [opts.image] - Path, URL, or buffer of an image to process
    *
    * @return {Promise<string>} Unique task identifier
    */
@@ -49,15 +49,17 @@ class CaptchaSolver {
       throw new Error(`provider ${this._provider.name} does not support task type "${opts.type}"`)
     }
 
-    if (Buffer.isBuffer(opts.image)) {
-      opts.image = opts.image.toString('base64')
-    } else if (typeof opts.image === 'string') {
-      opts.image = await pify(base64Image.encode)(opts.image, {
-        string: true,
-        local: !isUrl(opts.image)
-      })
-    } else {
-      throw new Error('unsupported image type')
+    if (opts.image) {
+      if (Buffer.isBuffer(opts.image)) {
+        opts.image = opts.image.toString('base64')
+      } else if (typeof opts.image === 'string') {
+        opts.image = await pify(base64Image.encode)(opts.image, {
+          string: true,
+          local: !isUrl(opts.image)
+        })
+      } else {
+        throw new Error('unsupported image type')
+      }
     }
 
     return this._provider.createTask(opts)
