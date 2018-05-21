@@ -4,12 +4,16 @@
   "repository": "transitive-bullshit/captcha-solver",
   "author": "Travis Fischer <travis@automagical.ai>",
   "license": "MIT",
+  "main": "packages/captcha-solver/index.js",
+  "bin": {
+    "captcha-solver": "packages/captcha-solver-cli/index.js"
+  },
   "engines": {
     "node": ">=8"
   },
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "docs": "lerna run docs",
+    "docs": "lerna run docs && update-markdown-jsdoc && update-markdown-usage",
     "test": "lerna run test",
     "prepare": "lerna run prepare"
   },
@@ -17,7 +21,9 @@
     "packages/*"
   ],
   "devDependencies": {
-    "lerna": "^2.11.0"
+    "lerna": "^2.11.0",
+    "update-markdown-jsdoc": "^1.0.2",
+    "update-markdown-usage": "^1.0.1"
   },
   "dependencies": {}
 }
