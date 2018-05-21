@@ -14,17 +14,21 @@
     "node": ">=8"
   },
   "keywords": [
-    "verify",
-    "verification",
     "captcha",
+    "nocaptcha",
     "recaptcha",
     "recaptcha2",
     "recaptchav2",
     "funcaptcha",
     "imagecaptcha",
     "antigate",
+    "anticaptcha",
     "anti-captcha",
     "rucaptcha",
+    "verify",
+    "verification",
+    "solve",
+    "solver",
     "bot"
   ],
   "devDependencies": {
@@ -35,7 +39,10 @@
   "dependencies": {
     "captcha-solver-provider": "^0.0.1",
     "captcha-solver-provider-anti-captcha": "^0.0.2",
+    "is-url-superb": "^2.0.0",
+    "node-base64-image": "^1.0.5",
     "p-retry": "^2.0.0",
-    "p-timeout": "^2.0.1"
+    "p-timeout": "^2.0.1",
+    "pify": "^3.0.0"
   }
 }

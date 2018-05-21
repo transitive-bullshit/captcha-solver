@@ -1,22 +1,24 @@
 {
-  "name": "captcha-solver-provider-anti-captcha",
-  "version": "0.0.2",
-  "description": "Captcha solver provider for the anti-captcha service.",
+  "name": "captcha-solver-cli",
+  "version": "0.0.0",
+  "description": "CLI for automating CAPTCHA verification.",
   "main": "index.js",
   "repository": "transitive-bullshit/captcha-solver",
   "author": "Travis Fischer <travis@automagical.ai>",
   "license": "MIT",
+  "bin": {
+    "captcha-solver": "index.js"
+  },
   "scripts": {
-    "docs": "update-markdown-jsdoc",
+    "docs": "update-markdown-usage",
     "test": "ava -v && standard"
   },
   "engines": {
-    "node": ">=8"
+    "node": ">=4"
   },
   "keywords": [
     "captcha",
-    "verify",
-    "verification",
+    "nocaptcha",
     "recaptcha",
     "recaptcha2",
     "recaptchav2",
@@ -25,17 +27,22 @@
     "antigate",
     "anticaptcha",
     "anti-captcha",
+    "rucaptcha",
+    "verify",
+    "verification",
+    "solve",
+    "solver",
     "bot"
   ],
   "devDependencies": {
     "ava": "^0.25.0",
     "standard": "^11.0.0",
-    "update-markdown-jsdoc": "^1.0.2"
+    "update-markdown-usage": "^1.0.1"
   },
   "dependencies": {
-    "captcha-solver-provider": "^0.0.1",
-    "ow": "^0.3.0",
-    "request": "^2.87.0",
-    "request-promise-native": "^1.0.5"
+    "captcha-solver": "^0.0.1",
+    "commander": "^2.15.1",
+    "delay": "^2.0.0",
+    "node-compat-require": "^1.0.3"
   }
 }

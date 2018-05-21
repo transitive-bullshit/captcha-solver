@@ -79,7 +79,7 @@ class CaptchaSolverProviderAntiCaptcha extends CaptchaSolverProvider {
 
     switch (opts.type) {
       case 'image-to-text':
-        ow(opts.image, ow.string.nonEmpty.alphanumeric)
+        ow(opts.image, ow.string.nonEmpty)
         body.task.type = 'ImageToTextTask'
         body.task.body = opts.image
         break
@@ -99,7 +99,7 @@ class CaptchaSolverProviderAntiCaptcha extends CaptchaSolverProvider {
       err.code = result.errorCode
       throw err
     } else {
-      return result.taskId
+      return '' + result.taskId
     }
   }
 
@@ -125,7 +125,7 @@ class CaptchaSolverProviderAntiCaptcha extends CaptchaSolverProvider {
       err.code = result.errorCode
       throw err
     } else {
-      return result.solution
+      return result
     }
   }
 }

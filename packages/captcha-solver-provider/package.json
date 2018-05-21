@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Abstract base class for captcha solver providers.",
   "main": "index.js",
-  "repository": "transitive-bullshit/captcha-solver-provider",
+  "repository": "transitive-bullshit/captcha-solver",
   "author": "Travis Fischer <travis@automagical.ai>",
   "license": "MIT",
   "scripts": {

@@ -1,6 +1,9 @@
 'use strict'
 
+const base64Image = require('node-base64-image')
+const isUrl = require('is-url-superb')
 const ow = require('ow')
+const pify = require('pify')
 const pRetry = require('p-retry')
 const pTimeout = require('p-timeout')
 
@@ -34,7 +37,7 @@ class CaptchaSolver {
    *
    * @param {object} opts - Options
    * @param {string} opts.type - Type of captcha to solve
-   * @param {buffer|string} opts.image - Captcha image to process
+   * @param {buffer|string} opts.image - Path, URL, or buffer of an image to process
    *
    * @return {Promise<string>} Unique task identifier
    */
@@ -44,6 +47,17 @@ class CaptchaSolver {
 
     if (!this._provider.supportedTaskTypes.has(opts.type)) {
       throw new Error(`provider ${this._provider.name} does not support task type "${opts.type}"`)
+    }
+
+    if (Buffer.isBuffer(opts.image)) {
+      opts.image = opts.image.toString('base64')
+    } else if (typeof opts.image === 'string') {
+      opts.image = await pify(base64Image.encode)(opts.image, {
+        string: true,
+        local: !isUrl(opts.image)
+      })
+    } else {
+      throw new Error('unsupported image type')
     }
 
     return this._provider.createTask(opts)
@@ -69,8 +83,14 @@ class CaptchaSolver {
       ...rest
     } = opts
 
-    return pTimeout(pRetry(() => {
-      return this._provider.getTaskResult(taskId)
+    return pTimeout(pRetry(async () => {
+      const result = await this._provider.getTaskResult(taskId)
+
+      if (result.status !== 'ready') {
+        throw new Error(`task is still processing (status "${result.status}")`)
+      }
+
+      return result
     }, {
       retries,
       maxTimeout: timeout,
