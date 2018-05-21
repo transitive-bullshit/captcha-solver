@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "description": "Facilitates the automation of CAPTCHA verification.",
+  "repository": "transitive-bullshit/captcha-solver",
+  "author": "Travis Fischer <travis@automagical.ai>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=8"
+  },
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "test": "lerna run test",
+    "prepare": "lerna run prepare"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "lerna": "^2.11.0"
+  },
+  "dependencies": {}
+}

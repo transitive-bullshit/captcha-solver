@@ -1,0 +1,40 @@
+{
+  "name": "captcha-solver-provider-anti-captcha",
+  "version": "0.0.0",
+  "description": "Captcha solver provider for the anti-captcha service.",
+  "main": "index.js",
+  "repository": "transitive-bullshit/captcha-solver-provider-anti-captcha",
+  "author": "Travis Fischer <travis@automagical.ai>",
+  "license": "MIT",
+  "scripts": {
+    "docs": "update-markdown-jsdoc",
+    "test": "ava -v && standard"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "keywords": [
+    "captcha",
+    "verify",
+    "verification",
+    "recaptcha",
+    "recaptcha2",
+    "recaptchav2",
+    "funcaptcha",
+    "imagecaptcha",
+    "antigate",
+    "anticaptcha",
+    "anti-captcha",
+    "bot"
+  ],
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "standard": "^11.0.0",
+    "update-markdown-jsdoc": "^1.0.2"
+  },
+  "dependencies": {
+    "ow": "^0.3.0",
+    "request": "^2.87.0",
+    "request-promise-native": "^1.0.5"
+  }
+}

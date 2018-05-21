@@ -1,0 +1,39 @@
+{
+  "name": "captcha-solver",
+  "version": "0.0.0",
+  "description": "Facilitates the automation of CAPTCHA verification.",
+  "main": "index.js",
+  "repository": "transitive-bullshit/captcha-solver",
+  "author": "Travis Fischer <travis@automagical.ai>",
+  "license": "MIT",
+  "scripts": {
+    "docs": "update-markdown-jsdoc",
+    "test": "ava -v && standard"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "keywords": [
+    "verify",
+    "verification",
+    "captcha",
+    "recaptcha",
+    "recaptcha2",
+    "recaptchav2",
+    "funcaptcha",
+    "imagecaptcha",
+    "antigate",
+    "anti-captcha",
+    "rucaptcha",
+    "bot"
+  ],
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "standard": "^11.0.0",
+    "update-markdown-jsdoc": "^1.0.2"
+  },
+  "dependencies": {
+    "p-retry": "^2.0.0",
+    "p-timeout": "^2.0.1"
+  }
+}
