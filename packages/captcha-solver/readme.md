@@ -34,7 +34,7 @@ const codes = await solver.solve()
     -   [createTask](#createtask)
     -   [getTaskResult](#gettaskresult)
 
-### [CaptchaSolver](https://github.com/transitive-bullshit/captcha-solver/blob/170214d0031b20cd05080088b16434b7b900386d/packages/captcha-solver/index.js#L19-L100)
+### [CaptchaSolver](https://github.com/transitive-bullshit/captcha-solver/blob/d779c7a87541decd9422a715c3e7e503a49fd0bb/packages/captcha-solver/index.js#L19-L100)
 
 Main entrypoint for solving captchas.
 
@@ -46,7 +46,7 @@ Type: `function (provider, opts)`
 
 * * *
 
-#### [provider](https://github.com/transitive-bullshit/captcha-solver/blob/170214d0031b20cd05080088b16434b7b900386d/packages/captcha-solver/index.js#L33-L33)
+#### [provider](https://github.com/transitive-bullshit/captcha-solver/blob/d779c7a87541decd9422a715c3e7e503a49fd0bb/packages/captcha-solver/index.js#L33-L33)
 
 Provider powering this solver.
 
@@ -54,7 +54,7 @@ Type: CaptchaSolverProvider
 
 * * *
 
-#### [createTask](https://github.com/transitive-bullshit/captcha-solver/blob/170214d0031b20cd05080088b16434b7b900386d/packages/captcha-solver/index.js#L44-L64)
+#### [createTask](https://github.com/transitive-bullshit/captcha-solver/blob/d779c7a87541decd9422a715c3e7e503a49fd0bb/packages/captcha-solver/index.js#L44-L64)
 
 Creates a new captcha solving task.
 
@@ -66,7 +66,7 @@ Type: `function (opts)`
 
 * * *
 
-#### [getTaskResult](https://github.com/transitive-bullshit/captcha-solver/blob/170214d0031b20cd05080088b16434b7b900386d/packages/captcha-solver/index.js#L76-L99)
+#### [getTaskResult](https://github.com/transitive-bullshit/captcha-solver/blob/d779c7a87541decd9422a715c3e7e503a49fd0bb/packages/captcha-solver/index.js#L76-L99)
 
 Fetches the result of a previously created captcha solving task.
 
