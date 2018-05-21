@@ -1,6 +1,6 @@
 {
   "name": "captcha-solver-provider-anti-captcha",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Captcha solver provider for the anti-captcha service.",
   "main": "index.js",
   "repository": "transitive-bullshit/captcha-solver",
@@ -33,7 +33,7 @@
     "update-markdown-jsdoc": "^1.0.2"
   },
   "dependencies": {
-    "captcha-solver-provider": "^0.0.2",
+    "captcha-solver-provider": "^0.0.3",
     "ow": "^0.3.0",
     "request": "^2.87.0",
     "request-promise-native": "^1.0.5"
