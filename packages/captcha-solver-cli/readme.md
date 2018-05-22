@@ -24,16 +24,16 @@ npm install -g captcha-solver-cli
     -t, --type <string>                 Type of captcha to solve (default: image-to-text)
     -k, --key <string>                  API key for provider
     -u, --website-url <url>             Website URL for nocaptcha, recaptcha, and funcaptcha
-    ---website-key <url>                Recaptcha website key
-    ---website-s-token <token>          Optional secret token for old version of Recaptcha
-    ---website-public-key <string>      Funcaptcha public key
+    -K, --website-key <string>          Recaptcha website key
+    -S, --website-s-token <token>       Optional secret token for old version of Recaptcha
+    --website-public-key <string>       Funcaptcha public key
     --proxy-type <string>               Type of proxy to use
     --proxy-address <string>            Proxy IP address ipv4/ipv6
     --proxy-port <number>               Proxy port
     --proxy-login <string>              Optional login for proxy which requires authorizaiton (basic)
     --proxy-password <string>           Optional proxy password
-    --user-agent <string>               Browser's User-Agent which is used in emulation.
-    --cookies <string>                  Optional additional cookies.
+    -U, --user-agent <string>           Browser's User-Agent which is used in emulation.
+    -C, --cookies <string>              Optional additional cookies.
     -P, --provider <provider>           Provider to use (default: anti-captcha)
     -h, --help                          output usage information
 

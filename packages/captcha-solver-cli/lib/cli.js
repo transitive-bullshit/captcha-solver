@@ -15,16 +15,16 @@ module.exports = (argv) => {
     .option('-t, --type <string>', 'Type of captcha to solve', (s) => s, 'image-to-text')
     .option('-k, --key <string>', 'API key for provider')
     .option('-u, --website-url <url>', 'Website URL for nocaptcha, recaptcha, and funcaptcha')
-    .option('---website-key <url>', 'Recaptcha website key')
-    .option('---website-s-token <token>', 'Optional secret token for old version of Recaptcha')
-    .option('---website-public-key <string>', 'Funcaptcha public key')
+    .option('-K, --website-key <string>', 'Recaptcha website key')
+    .option('-S, --website-s-token <token>', 'Optional secret token for old version of Recaptcha')
+    .option('--website-public-key <string>', 'Funcaptcha public key')
     .option('--proxy-type <string>', 'Type of proxy to use', /^(http|socks4|socks5)$/)
     .option('--proxy-address <string>', 'Proxy IP address ipv4/ipv6')
     .option('--proxy-port <number>', 'Proxy port')
     .option('--proxy-login <string>', 'Optional login for proxy which requires authorizaiton (basic)')
     .option('--proxy-password <string>', 'Optional proxy password')
-    .option('--user-agent <string>', 'Browser\'s User-Agent which is used in emulation.')
-    .option('--cookies <string>', 'Optional additional cookies.')
+    .option('-U, --user-agent <string>', 'Browser\'s User-Agent which is used in emulation.')
+    .option('-C, --cookies <string>', 'Optional additional cookies.')
     .option('-P, --provider <provider>', 'Provider to use', /^(anti-captcha)$/, 'anti-captcha')
 
   program
@@ -59,7 +59,7 @@ module.exports = (argv) => {
   program
     .command('get-task-result <taskId>')
     .option('-r, --retries <number>', 'number of retries', parseInt, 3)
-    .option('-t, --timeout <number>', 'timeout in ms', parseInt, 30000)
+    .option('-t, --timeout <number>', 'timeout in ms', parseInt, 45000)
     .action(async (taskId, opts) => {
       try {
         const client = new CaptchaSolver(program.provider, { key: program.key })
@@ -67,6 +67,7 @@ module.exports = (argv) => {
         const result = await client.getTaskResult(taskId, {
           retries: opts.retries,
           timeout: opts.timeout,
+          minTimeout: 5000,
           onFailedAttempt: (err) => {
             console.log(`Error getting task result #${err.attemptNumber} failed. Retrying ${err.attemptsLeft} times left...`)
           }
@@ -83,7 +84,7 @@ module.exports = (argv) => {
     .command('solve')
     .option('-r, --retries <number>', 'number of retries', parseInt, 3)
     .option('-d, --delay <number>', 'delay in ms before first checking for result', parseInt, 10000)
-    .option('-t, --timeout <number>', 'timeout in ms', parseInt, 30000)
+    .option('-t, --timeout <number>', 'timeout in ms', parseInt, 45000)
     .action(async (opts) => {
       try {
         const client = new CaptchaSolver(program.provider, { key: program.key })
@@ -111,6 +112,7 @@ module.exports = (argv) => {
         const result = await client.getTaskResult(taskId, {
           retries: opts.retries,
           timeout: opts.timeout,
+          minTimeout: 5000,
           onFailedAttempt: (err) => {
             console.log(`Error getting task result #${err.attemptNumber} failed. Retrying ${err.attemptsLeft} times left...`)
           }
