@@ -4,6 +4,10 @@
 
 [![NPM](https://img.shields.io/npm/v/captcha-solver.svg)](https://www.npmjs.com/package/captcha-solver) [![Build Status](https://travis-ci.com/transitive-bullshit/captcha-solver.svg?branch=master)](https://travis-ci.com/transitive-bullshit/captcha-solver) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
+<p align="center">
+  <img width="313" alt="Nocaptcha Recaptcha" src="https://cdn.rawgit.com/transitive-bullshit/captcha-solver/master/packages/captcha-solver/media/nocaptcha.gif">
+</p>
+
 ## Status
 
 This project is fully functional both as a [library](packages/captcha-solver) and [CLI](packages/captcha-solver-cli). We currently only support one captcha-solver-provider, powered by [anti-captcha](https://anti-captcha.com).
