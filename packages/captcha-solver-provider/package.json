@@ -1,6 +1,6 @@
 {
   "name": "captcha-solver-provider",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Abstract base class for captcha solver providers.",
   "main": "index.js",
   "repository": "transitive-bullshit/captcha-solver",
