@@ -6,6 +6,10 @@
 
 This module also has a [CLI](https://github.com/transitive-bullshit/captcha-solver/tree/master/packages/captcha-solver-cli).
 
+<p align="center">
+  <img width="313" alt="Nocaptcha Recaptcha" src="https://cdn.rawgit.com/transitive-bullshit/captcha-solver/master/packages/captcha-solver/media/nocaptcha.gif">
+</p>
+
 ## Install
 
 This module requires `node >= 8`.
