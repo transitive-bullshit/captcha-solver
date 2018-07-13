@@ -11,9 +11,9 @@ const { version } = require('../package')
 module.exports = (argv) => {
   program
     .version(version)
+    .option('-k, --key <string>', 'API key for provider')
     .option('-i, --image <path>', 'Path or url of image to solve')
     .option('-t, --type <string>', 'Type of captcha to solve', (s) => s, 'image-to-text')
-    .option('-k, --key <string>', 'API key for provider')
     .option('-u, --website-url <url>', 'Website URL for nocaptcha, recaptcha, and funcaptcha')
     .option('-K, --website-key <string>', 'Recaptcha website key')
     .option('-S, --website-s-token <token>', 'Optional secret token for old version of Recaptcha')

@@ -28,9 +28,9 @@ This project is fully functional both as a [library](packages/captcha-solver) an
   Options:
 
     -V, --version                       output the version number
+    -k, --key <string>                  API key for provider
     -i, --image <path>                  Path or url of image to solve
     -t, --type <string>                 Type of captcha to solve (default: image-to-text)
-    -k, --key <string>                  API key for provider
     -u, --website-url <url>             Website URL for nocaptcha, recaptcha, and funcaptcha
     -K, --website-key <string>          Recaptcha website key
     -S, --website-s-token <token>       Optional secret token for old version of Recaptcha

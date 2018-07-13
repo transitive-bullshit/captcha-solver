@@ -30,7 +30,7 @@ class CaptchaSolverProviderAntiCaptcha extends CaptchaSolverProvider {
     super(opts)
 
     ow(opts, ow.object.plain.nonEmpty)
-    ow(opts.key, ow.string.nonEmpty)
+    ow(opts.key, ow.string.nonEmpty.label('key'))
 
     this._opts = opts
   }
@@ -75,7 +75,7 @@ class CaptchaSolverProviderAntiCaptcha extends CaptchaSolverProvider {
    */
   async createTask (opts) {
     ow(opts, ow.object.plain.nonEmpty)
-    ow(opts.type, ow.string.nonEmpty)
+    ow(opts.type, ow.string.nonEmpty.label('type'))
 
     const {
       type,
@@ -92,7 +92,7 @@ class CaptchaSolverProviderAntiCaptcha extends CaptchaSolverProvider {
     // any optional parameters will be passed through untouched
     switch (opts.type) {
       case 'image-to-text':
-        ow(opts.image, ow.string.nonEmpty)
+        ow(opts.image, ow.string.nonEmpty.label('image'))
         body.task.type = 'ImageToTextTask'
         body.task.body = opts.image
         break
